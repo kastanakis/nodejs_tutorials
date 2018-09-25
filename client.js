@@ -7,11 +7,11 @@ const rl = readline.createInterface({
 var client = new net.Socket();
 
 client.connect(5000, '127.0.0.1', function() {
-	console.log('Client connected on server\'s IP');
+	console.log('Client id = [' + client.localAddress + " : " + client.localPort + ']');
 });
 
 client.on('data', function(data) {
-	console.log('Received: ' + data);
+	console.log('Received a message!!!' + "\n>>\n" + data + "<<");
 	getUinput();
 });
 

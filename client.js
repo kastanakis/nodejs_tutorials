@@ -1,6 +1,6 @@
 var net = require('net');
 var readline = require('readline');
-var colors = require('colors');
+var colors = require('colors'); 
 const rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout

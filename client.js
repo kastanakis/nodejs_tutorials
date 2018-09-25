@@ -1,5 +1,6 @@
 var net = require('net');
 var readline = require('readline');
+var colors = require('colors');
 const rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout
@@ -17,6 +18,11 @@ client.on('data', function(data) {
 
 client.on('close', function() {
 	console.log('Connection closed');
+});
+
+client.on('error', function () {
+	console.log(colors.red("\nInternal Error 500\nTerminating...\n") + "<<<");
+	process.exit();
 });
 
 function getUinput(){
